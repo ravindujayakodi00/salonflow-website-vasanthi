@@ -19,7 +19,7 @@ export default function BookingPage() {
     }, []);
 
     return (
-        <main className={`bg-gradient-to-b from-primary-950 via-[#0a1a0a] to-primary-950 ${isMobile ? 'h-screen overflow-hidden' : 'min-h-screen'}`}>
+        <main className={`bg-[var(--t-bg-2)] ${isMobile ? 'h-screen overflow-hidden' : 'min-h-screen'}`}>
             {/* Fixed background pattern */}
             <div className="fixed inset-0 -z-10">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-900/20 via-transparent to-transparent" />
