@@ -72,6 +72,41 @@ export const content = {
     mapUrl:  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9!2d79.856!3d6.914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTQnNTAuNiJOIDc5wrA1MSczMy42IkU!5e0!3m2!1sen!2slk!4v1',
   },
 
+  expertise: {
+    heading:    'Our Expertise',
+    scrollHint: 'Scroll to explore',
+    items: [
+      {
+        id:          1,
+        number:      '01',
+        title:       'Bridal Artistry',
+        description: 'Timeless bridal looks crafted with precision — from traditional to contemporary styles for your most special day.',
+        image:       'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop',
+      },
+      {
+        id:          2,
+        number:      '02',
+        title:       'Hair Transformation',
+        description: 'Expert cuts, colour, keratin and smoothening treatments that bring out the best version of your hair.',
+        image:       'https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=2026&auto=format&fit=crop',
+      },
+      {
+        id:          3,
+        number:      '03',
+        title:       'Skin & Glow',
+        description: 'Advanced facials, clean-ups and personalised skincare regimens for radiant, healthy skin.',
+        image:       'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop',
+      },
+      {
+        id:          4,
+        number:      '04',
+        title:       'Nail Couture',
+        description: 'Intricate nail art, gel extensions and classic manicures by our certified nail technicians.',
+        image:       'https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1974&auto=format&fit=crop',
+      },
+    ],
+  },
+
   footer: {
     tagline: 'Premium beauty services by Vasanthi Gulasekharam — trusted by brides and beauty lovers across Sri Lanka.',
     links: [
