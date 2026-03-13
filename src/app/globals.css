@@ -108,7 +108,7 @@ body {
   padding: 0.8rem 2.2rem;
   font-family: var(--t-font-body);
   font-size: 0.65rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   border-radius: var(--t-radius, 0px);
@@ -120,16 +120,16 @@ body {
   text-decoration: none;
 }
 
-/* Yellow filled — primary CTA */
+/* Gold filled — primary CTA */
 .t-btn-accent {
-  background-color: var(--t-accent);
-  color: #111111;
-  border-color: var(--t-accent);
+  background-color: #C09F4F;
+  color: #ffffff;
+  border-color: #C09F4F;
 }
 .t-btn-accent:hover {
-  background-color: #f0e800;
-  color: #111111;
-  border-color: #f0e800;
+  background-color: #a8883a;
+  color: #ffffff;
+  border-color: #a8883a;
 }
 
 /* Dark filled — on light backgrounds */
