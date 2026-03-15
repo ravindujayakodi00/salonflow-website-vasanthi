@@ -48,32 +48,49 @@ export default function GallerySection() {
 
       {/* Full-width tight grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-0.5">
-        {gallery.images.map((image) => (
-          <div
-            key={image.id}
-            className={`gallery-item relative overflow-hidden group ${image.wide ? 'md:col-span-2' : ''}`}
-            style={{ opacity: 1 }}
-          >
-            <div className="relative w-full aspect-square">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes={image.wide ? '50vw' : '25vw'}
-              />
-            </div>
-            {/* Hover overlay — warm tan tint instead of pure black */}
+        {gallery.images.map((item) => {
+          const isWide        = item.wide;
+          const isPortrait    = item.orientation === 'portrait';
+          const aspectClass   = isWide ? 'aspect-video' : (isPortrait ? 'aspect-[3/4]' : 'aspect-square');
+
+          return (
             <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-              style={{ background: 'rgba(205,155,119,0.55)' }}
+              key={item.id}
+              className={`gallery-item relative overflow-hidden group ${isWide ? 'col-span-2' : ''}`}
+              style={{ opacity: 1 }}
             >
-              <span className="t-label text-white tracking-widest text-center px-4">
-                {image.alt}
-              </span>
+              <div className={`relative w-full ${aspectClass}`}>
+                {item.type === 'video' ? (
+                  <video
+                    src={item.src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes={isWide ? '50vw' : '25vw'}
+                  />
+                )}
+              </div>
+              {/* Hover overlay */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                style={{ background: 'rgba(192,159,79,0.55)' }}
+              >
+                <span className="t-label text-white tracking-widest text-center px-4">
+                  {item.alt}
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

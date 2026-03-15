@@ -22,9 +22,9 @@
 
   --t-radius:       0px;
 
-  --t-font-display: Georgia, "Times New Roman", serif;
-  --t-font-body:    "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --t-font-script:  cursive;
+  --t-font-display: "Cormorant Garamond", Georgia, serif;
+  --t-font-body:    "Jost", "Helvetica Neue", sans-serif;
+  --t-font-script:  "Pinyon Script", cursive;
 }
 
 @variant dark (&:where(.dark, .dark *));
@@ -42,8 +42,8 @@
   --color-primary-900: #3d280d;
   --color-primary-950: #1e1408;
 
-  --font-display: Georgia, serif;
-  --font-sans:    "Helvetica Neue", sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans:    "Jost", "Helvetica Neue", sans-serif;
 }
 
 /* ============================================================
@@ -58,9 +58,9 @@ body {
   background-color: var(--t-bg, #fffefc);
   color: var(--t-text, #111111);
   /* Override font vars now that Next.js font CSS vars are available on body */
-  --t-font-display: var(--font-bodoni), Georgia, "Times New Roman", serif;
-  --t-font-body:    var(--font-raleway), "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --t-font-script:  var(--font-vibes), cursive;
+  --t-font-display: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  --t-font-body:    var(--font-body), "Jost", "Helvetica Neue", sans-serif;
+  --t-font-script:  var(--font-script), "Pinyon Script", cursive;
   font-family: var(--t-font-body);
 }
 
@@ -88,6 +88,16 @@ body {
 .t-display { font-family: var(--t-font-display); }
 .t-body    { font-family: var(--t-font-body); }
 .t-script  { font-family: var(--t-font-script); }
+
+/* Navbar links — Cormorant italic, elegant spacing */
+.t-nav-link {
+  font-family: var(--t-font-display);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
 
 /* ============================================================
    LABEL — small uppercase tracking (ninezeroonesalon.com style)

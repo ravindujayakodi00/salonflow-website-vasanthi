@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
-import { Raleway, Bodoni_Moda, Great_Vibes } from "next/font/google";
+import { Jost, Cormorant_Garamond, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import SmoothScroller from "@/components/SmoothScroller";
 import { themeContent } from "@/themes";
 
-const raleway = Raleway({
-  variable: "--font-raleway",
+const jost = Jost({
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
-const bodoniModa = Bodoni_Moda({
-  variable: "--font-bodoni",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const greatVibes = Great_Vibes({
-  variable: "--font-vibes",
+const pinyonScript = Pinyon_Script({
+  variable: "--font-script",
   subsets: ["latin"],
   weight: ["400"],
   display: "swap",
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${raleway.variable} ${bodoniModa.variable} ${greatVibes.variable} antialiased font-sans`}
+        className={`${jost.variable} ${cormorant.variable} ${pinyonScript.variable} antialiased font-sans`}
         suppressHydrationWarning
       >
         <SmoothScroller />

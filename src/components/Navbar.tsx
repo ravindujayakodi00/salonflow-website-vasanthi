@@ -78,7 +78,7 @@ export default function Navbar({ alwaysVisible = false }: NavbarProps) {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`t-label transition-colors duration-200 ${
+                  className={`t-nav-link transition-colors duration-200 ${
                     onHero
                       ? 'text-white/80 hover:text-white'
                       : 'text-[var(--t-text-2)] hover:text-[var(--t-text)]'
@@ -131,7 +131,7 @@ export default function Navbar({ alwaysVisible = false }: NavbarProps) {
             <a
               key={link.name}
               href={link.href}
-              className="t-display text-3xl font-light tracking-[0.08em] text-[var(--t-text)] hover:text-[var(--t-accent-2)] transition-colors duration-200"
+              className="t-display text-4xl font-light italic tracking-[0.06em] text-[var(--t-text)] hover:text-[var(--t-accent-2)] transition-colors duration-200"
               style={{ transitionDelay: `${i * 40}ms` }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
