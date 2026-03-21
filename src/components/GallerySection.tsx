@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from '@/utils/gsapConfig';
 import Image from 'next/image';
 import { themeContent } from '@/themes';
@@ -10,11 +10,6 @@ const { gallery } = themeContent;
 export default function GallerySection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const titleRef   = useRef<HTMLDivElement | null>(null);
-  const [activeId, setActiveId] = useState<number | null>(null);
-
-  const handleTap = (id: number) => {
-    setActiveId(prev => prev === id ? null : id);
-  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -61,9 +56,8 @@ export default function GallerySection() {
           return (
             <div
               key={item.id}
-              className={`gallery-item relative overflow-hidden group cursor-pointer ${isWide ? 'col-span-2' : ''}`}
+              className={`gallery-item relative overflow-hidden group ${isWide ? 'col-span-2' : ''}`}
               style={{ opacity: 1 }}
-              onClick={() => handleTap(item.id)}
             >
               <div className={`relative w-full ${aspectClass}`}>
                 {item.type === 'video' ? (
@@ -81,15 +75,13 @@ export default function GallerySection() {
                     alt={item.alt}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes={isWide ? '(max-width: 768px) 100vw, 50vw' : '(max-width: 768px) 50vw, 25vw'}
-                    loading="lazy"
-                    quality={80}
+                    sizes={isWide ? '50vw' : '25vw'}
                   />
                 )}
               </div>
-              {/* Overlay — hover on desktop, tap-toggle on touch */}
+              {/* Hover overlay */}
               <div
-                className={`absolute inset-0 transition-opacity duration-300 flex items-center justify-center group-hover:opacity-100 ${activeId === item.id ? 'opacity-100' : 'opacity-0'}`}
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                 style={{ background: 'rgba(192,159,79,0.55)' }}
               >
                 <span className="t-label text-white tracking-widest text-center px-4">
