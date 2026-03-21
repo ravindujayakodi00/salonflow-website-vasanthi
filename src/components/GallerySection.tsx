@@ -10,11 +10,23 @@ const { gallery } = themeContent;
 export default function GallerySection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const titleRef   = useRef<HTMLDivElement | null>(null);
-  const [activeId, setActiveId] = useState<number | null>(null);
+  const [activeId,      setActiveId]      = useState<number | null>(null);
+  const [videoVisible,  setVideoVisible]  = useState(false);
 
   const handleTap = (id: number) => {
     setActiveId(prev => prev === id ? null : id);
   };
+
+  // Load gallery video only when section scrolls into view
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVideoVisible(true); },
+      { rootMargin: '200px' }
+    );
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -68,11 +80,12 @@ export default function GallerySection() {
               <div className={`relative w-full ${aspectClass}`}>
                 {item.type === 'video' ? (
                   <video
-                    src={item.src}
+                    src={videoVisible ? item.src : undefined}
                     autoPlay
                     muted
                     loop
                     playsInline
+                    preload="none"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
@@ -81,7 +94,9 @@ export default function GallerySection() {
                     alt={item.alt}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes={isWide ? '50vw' : '25vw'}
+                    sizes={isWide ? '(max-width: 768px) 100vw, 50vw' : '(max-width: 768px) 50vw, 25vw'}
+                    loading="lazy"
+                    quality={80}
                   />
                 )}
               </div>

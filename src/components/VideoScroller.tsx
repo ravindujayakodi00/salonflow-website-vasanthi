@@ -131,7 +131,7 @@ export default function VideoScroller() {
                 src="/videos/bg.mp4"
                 muted
                 playsInline
-                preload="auto"
+                preload="metadata"
                 className={`absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto object-cover transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-1000 ${isVideoReady ? 'opacity-60' : 'opacity-0'}`}
                 suppressHydrationWarning
             />
