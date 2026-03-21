@@ -14,27 +14,38 @@ function AutoPlayVideo({ src, className }: { src: string; className: string }) {
     const video = videoRef.current;
     if (!video) return;
 
+    const tryPlay = () => { video.play().catch(() => {}); };
+
+    // Play as soon as the browser has enough data (covers iOS Safari)
+    video.addEventListener('canplay', tryPlay);
+
+    // Also play when scrolled into view in case it was loaded off-screen
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            video.play().catch(() => {});
-          } else {
-            video.pause();
-          }
-        });
+        if (entries[0].isIntersecting) {
+          tryPlay();
+        } else {
+          video.pause();
+        }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
-
     observer.observe(video);
-    return () => observer.disconnect();
+
+    // Attempt immediately in case already loaded
+    tryPlay();
+
+    return () => {
+      video.removeEventListener('canplay', tryPlay);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <video
       ref={videoRef}
       src={src}
+      autoPlay
       muted
       loop
       playsInline
