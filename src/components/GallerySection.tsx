@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from '@/utils/gsapConfig';
 import Image from 'next/image';
-import AutoPlayVideo from '@/components/AutoPlayVideo';
 import { themeContent } from '@/themes';
 
 const { gallery } = themeContent;
@@ -11,23 +10,11 @@ const { gallery } = themeContent;
 export default function GallerySection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const titleRef   = useRef<HTMLDivElement | null>(null);
-  const [activeId,      setActiveId]      = useState<number | null>(null);
-  const [videoVisible,  setVideoVisible]  = useState(false);
+  const [activeId, setActiveId] = useState<number | null>(null);
 
   const handleTap = (id: number) => {
     setActiveId(prev => prev === id ? null : id);
   };
-
-  // Load gallery video only when section scrolls into view
-  useEffect(() => {
-    if (!sectionRef.current) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVideoVisible(true); },
-      { rootMargin: '200px' }
-    );
-    observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -80,9 +67,14 @@ export default function GallerySection() {
             >
               <div className={`relative w-full ${aspectClass}`}>
                 {item.type === 'video' ? (
-                  <AutoPlayVideo
+                  <video
                     src={item.src}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 ) : (
                   <Image
