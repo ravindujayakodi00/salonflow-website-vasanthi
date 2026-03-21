@@ -5,7 +5,7 @@ import { themeContent } from '@/themes';
 import logoFooter from '@/assets/logo-pack/final one-08.png';
 import {JSX} from "react";
 
-const socialIcons: { Instagram: JSX.Element; Facebook: JSX.Element; WhatsApp: JSX.Element } = {
+const socialIcons: Record<string, JSX.Element> = {
   Instagram: <FaInstagram size={16} />,
   Facebook:  <FaFacebookF size={15} />,
   WhatsApp:  <FaWhatsapp size={16} />,
