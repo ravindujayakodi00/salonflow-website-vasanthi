@@ -81,7 +81,7 @@ export default function GallerySection() {
               </div>
               {/* Hover overlay */}
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 [@media(hover:none)]:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                 style={{ background: 'rgba(192,159,79,0.55)' }}
               >
                 <span className="t-label text-white tracking-widest text-center px-4">

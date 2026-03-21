@@ -43,30 +43,30 @@ export default function Navbar({ alwaysVisible = false }: NavbarProps) {
   const shouldHide = !alwaysVisible && !isVisible && !isMobileMenuOpen;
 
   // When over hero (transparent): white text. When scrolled / alwaysVisible: dark text.
-  const onHero = !isScrolled && !alwaysVisible;
+  const onHero = !isScrolled && !alwaysVisible && !isMobileMenuOpen;
 
   return (
     <>
       {/* ── MAIN NAVBAR ── */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled || alwaysVisible
+          isScrolled || alwaysVisible || isMobileMenuOpen
             ? 'bg-[var(--t-bg)] border-b border-[var(--t-border)] shadow-[0_1px_0_var(--t-border)]'
             : 'bg-transparent'
         } ${shouldHide ? '-translate-y-full' : 'translate-y-0'}`}
         onMouseEnter={() => setIsVisible(true)}
       >
         <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
-          <div className={`flex items-center justify-between transition-all duration-300 ${
-            isScrolled || alwaysVisible ? 'py-4' : 'py-6'
+          <div className={`relative flex items-center justify-between transition-all duration-300 ${
+            isScrolled || alwaysVisible ? 'py-3 lg:py-4' : 'py-3 lg:py-6'
           }`}>
 
-            {/* Logo */}
-            <a href="#home" className="flex-shrink-0">
+            {/* Logo — centered on mobile, left-aligned on desktop */}
+            <a href="#home" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex-shrink-0">
               <Image
                 src={logoLongLight}
                 alt={themeContent.salonName}
-                height={isScrolled || alwaysVisible ? 38 : 44}
+                height={isScrolled || alwaysVisible ? 32 : 36}
                 className="w-auto transition-all duration-300"
                 priority
               />
@@ -124,7 +124,7 @@ export default function Navbar({ alwaysVisible = false }: NavbarProps) {
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="h-16 border-b border-[var(--t-border)]" />
+        <div className="h-16" />
 
         <div className="flex-1 flex flex-col items-center justify-center gap-5 px-8">
           {navLinks.map((link, i) => (
