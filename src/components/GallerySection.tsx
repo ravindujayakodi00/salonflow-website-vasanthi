@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from '@/utils/gsapConfig';
 import Image from 'next/image';
+import AutoPlayVideo from '@/components/AutoPlayVideo';
 import { themeContent } from '@/themes';
 
 const { gallery } = themeContent;
@@ -79,14 +80,8 @@ export default function GallerySection() {
             >
               <div className={`relative w-full ${aspectClass}`}>
                 {item.type === 'video' ? (
-                  <video
+                  <AutoPlayVideo
                     src={item.src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    onLoadedData={(e) => (e.currentTarget as HTMLVideoElement).play().catch(() => {})}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
