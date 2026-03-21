@@ -134,15 +134,15 @@ export default function GallerySection() {
                   />
                 )}
               </div>
-              {/* Overlay — hover on desktop, tap-toggle on touch */}
-              <div
+              {/* Overlay — hover on desktop, tap-toggle on touch (images only) */}
+              {item.type !== 'video' && <div
                 className={`absolute inset-0 transition-opacity duration-300 flex items-center justify-center group-hover:opacity-100 ${activeId === item.id ? 'opacity-100' : 'opacity-0'}`}
                 style={{ background: 'rgba(192,159,79,0.55)' }}
               >
                 <span className="t-label text-white tracking-widest text-center px-4">
                   {item.alt}
                 </span>
-              </div>
+              </div>}
             </div>
           );
         })}
