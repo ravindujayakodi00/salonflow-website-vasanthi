@@ -14,6 +14,9 @@ function AutoPlayVideo({ src, className }: { src: string; className: string }) {
     const video = videoRef.current;
     if (!video) return;
 
+    // Chrome bug: muted attribute doesn't always set the muted property
+    video.muted = true;
+
     const tryPlay = () => { video.play().catch(() => {}); };
 
     // Play as soon as the browser has enough data (covers iOS Safari)
