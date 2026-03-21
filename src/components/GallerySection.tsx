@@ -80,12 +80,13 @@ export default function GallerySection() {
               <div className={`relative w-full ${aspectClass}`}>
                 {item.type === 'video' ? (
                   <video
-                    src={videoVisible ? item.src : undefined}
+                    src={item.src}
                     autoPlay
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="auto"
+                    onLoadedData={(e) => (e.currentTarget as HTMLVideoElement).play().catch(() => {})}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (

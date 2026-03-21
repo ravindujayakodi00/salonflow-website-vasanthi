@@ -48,7 +48,16 @@ export default function VideoScroller() {
             rafRef.current = requestAnimationFrame(smoothSeek);
         };
 
-        // Initialize video
+        // Mobile: just autoplay and loop — no scroll scrubbing
+        if (isMobile) {
+            video.loop  = true;
+            video.muted = true;
+            video.play().catch(() => {});
+            setIsVideoReady(true);
+            return;
+        }
+
+        // Desktop: scroll-controlled seek
         const initVideo = () => {
             video.load();
             const playPromise = video.play();
@@ -73,10 +82,8 @@ export default function VideoScroller() {
             video.pause();
             video.currentTime = 0;
 
-            // Start smooth seek loop
             rafRef.current = requestAnimationFrame(smoothSeek);
 
-            // Create scroll trigger without pinning to avoid DOM conflicts
             scrollTriggerRef.current = ScrollTrigger.create({
                 trigger: document.body,
                 start: 'top top',

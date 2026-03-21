@@ -54,6 +54,15 @@ html, body {
   max-width: 100vw;
 }
 
+/* Suppress native browser/iOS play button overlay on all videos */
+video::-webkit-media-controls,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-start-playback-button,
+video::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 body {
   background-color: var(--t-bg, #fffefc);
   color: var(--t-text, #111111);
