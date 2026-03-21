@@ -868,7 +868,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                                 <p className="text-[var(--t-text-3)] mt-3 text-sm">Loading services...</p>
                             </div>
                         ) : (
-                            <div className="max-h-[400px] overflow-y-auto">
+                            <div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                                     {filteredServices.map(service => {
                                         const isSelected = configuring.service?.id === service.id && configuring.date && configuring.time;
@@ -1273,7 +1273,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
             <section
                 ref={sectionRef}
                 id="appointment"
-                className={`h-[100dvh] w-full bg-[var(--t-bg)] relative z-10 overflow-hidden ${isStandalone ? 'pt-16' : ''}`}
+                className={`${isMobile ? 'min-h-screen' : 'h-[100dvh] overflow-hidden'} w-full bg-[var(--t-bg)] relative z-10 ${isStandalone ? 'pt-16' : ''}`}
             >
                 {/* Desktop Layout */}
                 <div className={`h-full flex ${isMobile ? 'hidden' : ''}`}>
@@ -1331,7 +1331,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                 </div>
 
                 {/* Mobile Layout */}
-                <div className={`h-full flex flex-col ${isMobile ? '' : 'hidden'}`}>
+                <div className={`flex flex-col ${isMobile ? '' : 'hidden'}`}>
                     {/* Mobile Header */}
                     <div className="flex-shrink-0 bg-[var(--t-bg-2)] border-b border-[var(--t-border)] px-4 py-3">
                         <div className="flex items-center justify-between mb-2">
@@ -1356,10 +1356,8 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                     </div>
 
                     {/* Mobile Content */}
-                    <div className="flex-1 overflow-hidden p-4 flex flex-col">
-                        <div className="flex-1 overflow-y-auto">
-                            {renderStepContent()}
-                        </div>
+                    <div className="p-4">
+                        {renderStepContent()}
                     </div>
                 </div>
             </section>
