@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import { themeContent } from '@/themes';
 import logoFooter from '@/assets/logo-pack/final one-08.png';
+import {JSX} from "react";
+
+const socialIcons: { Instagram: JSX.Element; Facebook: JSX.Element; WhatsApp: JSX.Element } = {
+  Instagram: <FaInstagram size={16} />,
+  Facebook:  <FaFacebookF size={15} />,
+  WhatsApp:  <FaWhatsapp size={16} />,
+};
 
 const { salonName, tagline, footer } = themeContent;
 
@@ -74,9 +82,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={s.name}
                   className="w-9 h-9 border border-white/15 flex items-center justify-center text-white/40 hover:text-[var(--t-accent)] hover:border-[var(--t-accent)] transition-all duration-200"
-                  style={{ fontSize: '0.52rem', letterSpacing: '0.05em' }}
                 >
-                  {s.letter}
+                  {socialIcons[s.name]}
                 </a>
               ))}
             </div>
