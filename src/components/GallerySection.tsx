@@ -52,7 +52,7 @@ export default function GallerySection() {
       </div>
 
       {/* Full-width tight grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-0.5">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-0.5 px-2 md:px-0">
         {gallery.images.map((item) => {
           const isWide        = item.wide;
           const isPortrait    = item.orientation === 'portrait';
