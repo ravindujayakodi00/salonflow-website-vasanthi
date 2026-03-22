@@ -58,7 +58,7 @@ export default function Navbar({ alwaysVisible = false }: NavbarProps) {
       >
         <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
           <div className={`relative flex items-center justify-between transition-all duration-300 ${
-            isScrolled || alwaysVisible ? 'py-3 lg:py-4' : 'py-3 lg:py-6'
+            isScrolled || alwaysVisible ? 'py-6 lg:py-4' : 'py-6 lg:py-6'
           }`}>
 
             {/* Logo — centered on mobile, left-aligned on desktop */}
