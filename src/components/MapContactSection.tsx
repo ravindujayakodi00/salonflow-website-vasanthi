@@ -41,13 +41,7 @@ export default function MapContactSection() {
 
         {/* Header */}
         <div className={`mb-8 lg:mb-12 transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="t-script text-[var(--t-accent-2)] mb-4" style={{ fontSize: '1.2rem' }}>{contact.label}</p>
-          <h2
-            className="t-display font-light text-[var(--t-text)]"
-            style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}
-          >
-            {contact.heading}
-          </h2>
+          <p className="t-script text-[var(--t-accent-2)]" style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}>{contact.label}</p>
         </div>
 
         {/* Map + info grid */}
@@ -64,7 +58,7 @@ export default function MapContactSection() {
               </div>
             )}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9!2d79.856!3d6.914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTQnNTAuNiJOIDc5wrA1MSczMy42IkU!5e0!3m2!1sen!2slk!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.8!2d79.8981334!3d6.8467948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25ba36e5a39dd%3A0x2b82e2728b5f11c2!2sVasanthi+Gulasekharam+Salon!5e0!3m2!1sen!2slk!4v1"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: '300px' }}

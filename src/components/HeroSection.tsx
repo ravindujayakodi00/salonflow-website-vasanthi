@@ -37,11 +37,6 @@ export default function HeroSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          {/* Label */}
-          <p className="t-script text-[var(--t-accent)] mb-3" style={{ fontSize: '1.1rem' }}>
-            {hero.label}
-          </p>
-
           {/* Heading */}
           <h1
             className="t-display font-light leading-[1.0] text-white mb-6"

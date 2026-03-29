@@ -30,7 +30,7 @@ export default function BookingCTA() {
       ref={sectionRef}
       id="book"
       className="relative py-16 lg:py-24 overflow-hidden z-10"
-      style={{ background: 'linear-gradient(135deg, #f5f0e8 0%, #fffefc 50%, #f5ebe0 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #EFE4D7 0%, #EFEBE2 50%, #EFE4D7 100%)' }}
     >
       {/* Decorative large background text */}
       <div

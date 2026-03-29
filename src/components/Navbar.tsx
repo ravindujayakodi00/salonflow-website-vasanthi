@@ -66,7 +66,7 @@ export default function Navbar({ alwaysVisible = false }: NavbarProps) {
               <Image
                 src={logoLongLight}
                 alt={themeContent.salonName}
-                height={isScrolled || alwaysVisible ? 32 : 36}
+                height={42}
                 className="w-auto transition-all duration-300"
                 priority
               />

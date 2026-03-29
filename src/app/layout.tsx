@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Jost, Cormorant_Garamond, Pinyon_Script } from "next/font/google";
+import { Montserrat, Cormorant_Garamond, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import SmoothScroller from "@/components/SmoothScroller";
 import { themeContent } from "@/themes";
 
-const jost = Jost({
+const montserrat = Montserrat({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${jost.variable} ${cormorant.variable} ${pinyonScript.variable} antialiased font-sans`}
+        className={`${montserrat.variable} ${cormorant.variable} ${pinyonScript.variable} antialiased font-sans`}
         suppressHydrationWarning
       >
         <SmoothScroller />

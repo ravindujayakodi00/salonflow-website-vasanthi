@@ -626,7 +626,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                     onClick={goNext}
                     disabled={!canProceed()}
                     className={`flex items-center gap-2 px-6 py-2.5 font-medium text-sm tracking-wider uppercase transition-all ${canProceed()
-                        ? 'bg-[var(--t-accent)] text-[var(--t-text)] hover:bg-[#f0e800]'
+                        ? 'bg-[var(--t-accent)] text-white hover:bg-[#8F7B6C]'
                         : 'bg-[var(--t-border)] text-[var(--t-text-3)] cursor-not-allowed'
                         }`}
                 >
@@ -819,7 +819,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                                 onClick={addToAppointments}
                                 disabled={!configuring.time}
                                 className={`flex-1 px-4 py-2 font-medium text-sm tracking-wider uppercase transition-all ${configuring.time
-                                    ? 'bg-[var(--t-accent)] text-[var(--t-text)] hover:bg-[#f0e800]'
+                                    ? 'bg-[var(--t-accent)] text-white hover:bg-[#8F7B6C]'
                                     : 'bg-[var(--t-border)] text-[var(--t-text-3)] cursor-not-allowed'
                                     }`}
                             >
@@ -1063,7 +1063,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                             <button
                                 onClick={() => { if (validateCustomerForm()) goNext(); }}
                                 disabled={!canProceed()}
-                                className={`flex items-center gap-2 px-6 py-2.5 font-medium text-sm tracking-wider uppercase transition-all ${canProceed() ? 'bg-[var(--t-accent)] text-[var(--t-text)] hover:bg-[#f0e800]' : 'bg-[var(--t-border)] text-[var(--t-text-3)] cursor-not-allowed'}`}
+                                className={`flex items-center gap-2 px-6 py-2.5 font-medium text-sm tracking-wider uppercase transition-all ${canProceed() ? 'bg-[var(--t-accent)] text-white hover:bg-[#8F7B6C]' : 'bg-[var(--t-border)] text-[var(--t-text-3)] cursor-not-allowed'}`}
                             >
                                 Continue
                                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1089,7 +1089,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                                     <button
                                         onClick={sendOtp}
                                         disabled={otpLoading}
-                                        className="px-8 py-3 bg-[var(--t-accent)] text-[var(--t-text)] font-medium text-sm tracking-wider uppercase hover:bg-[#f0e800] transition-all disabled:opacity-50"
+                                        className="px-8 py-3 bg-[var(--t-accent)] text-[var(--t-text)] font-medium text-sm tracking-wider uppercase hover:bg-[#8F7B6C] transition-all disabled:opacity-50"
                                     >
                                         {otpLoading ? (
                                             <span className="flex items-center gap-2">
@@ -1120,7 +1120,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                                     <button
                                         onClick={verifyOtp}
                                         disabled={otpLoading || otpValue.length !== 6}
-                                        className={`w-full py-3 font-medium text-sm tracking-wider uppercase transition-all ${otpValue.length === 6 ? 'bg-[var(--t-accent)] text-[var(--t-text)] hover:bg-[#f0e800]' : 'bg-[var(--t-border)] text-[var(--t-text-3)] cursor-not-allowed'}`}
+                                        className={`w-full py-3 font-medium text-sm tracking-wider uppercase transition-all ${otpValue.length === 6 ? 'bg-[var(--t-accent)] text-white hover:bg-[#8F7B6C]' : 'bg-[var(--t-border)] text-[var(--t-text-3)] cursor-not-allowed'}`}
                                     >
                                         {otpLoading ? (
                                             <span className="flex items-center justify-center gap-2">
@@ -1243,7 +1243,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                             <button
                                 onClick={handleSubmit}
                                 disabled={loading || cart.length === 0}
-                                className="flex items-center gap-2 px-8 py-2.5 bg-[var(--t-accent)] text-[var(--t-text)] font-medium text-sm tracking-wider uppercase hover:bg-[#f0e800] transition-all disabled:opacity-50"
+                                className="flex items-center gap-2 px-8 py-2.5 bg-[var(--t-accent)] text-[var(--t-text)] font-medium text-sm tracking-wider uppercase hover:bg-[#8F7B6C] transition-all disabled:opacity-50"
                             >
                                 {loading ? (
                                     <>
@@ -1416,7 +1416,7 @@ export default function AppointmentSection({ isStandalone = false }: Appointment
                         <div className="space-y-3">
                             <button
                                 onClick={() => { setBookingSuccess(null); setCurrentStep(1); }}
-                                className="w-full px-6 py-2.5 bg-[var(--t-accent)] text-[var(--t-text)] font-medium text-sm tracking-wider uppercase hover:bg-[#f0e800] transition-all"
+                                className="w-full px-6 py-2.5 bg-[var(--t-accent)] text-[var(--t-text)] font-medium text-sm tracking-wider uppercase hover:bg-[#8F7B6C] transition-all"
                             >
                                 + Book Another Appointment
                             </button>

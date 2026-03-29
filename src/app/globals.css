@@ -5,45 +5,45 @@
    Update these when switching themes (matches tokens.ts)
    ============================================================ */
 :root {
-  --t-bg:           #fffefc;
-  --t-bg-2:         #f5f0e8;
-  --t-bg-3:         #ffffff;
-  --t-bg-dark:      #111111;
+  --t-bg:           #EFEBE2;
+  --t-bg-2:         #EFE4D7;
+  --t-bg-3:         #EFEBE2;
+  --t-bg-dark:      #302621;
 
-  --t-text:         #111111;
-  --t-text-2:       #555555;
-  --t-text-3:       #999999;
+  --t-text:         #302621;
+  --t-text-2:       #6B5A4E;
+  --t-text-3:       #B9A594;
 
-  --t-accent:       #fffb00;
-  --t-accent-2:     #CD9B77;
+  --t-accent:       #B9A594;
+  --t-accent-2:     #B9A594;
 
-  --t-border:       rgba(0, 0, 0, 0.08);
-  --t-border-2:     rgba(0, 0, 0, 0.20);
+  --t-border:       rgba(48, 38, 33, 0.10);
+  --t-border-2:     rgba(48, 38, 33, 0.25);
 
   --t-radius:       0px;
 
   --t-font-display: "Cormorant Garamond", Georgia, serif;
-  --t-font-body:    "Jost", "Helvetica Neue", sans-serif;
+  --t-font-body:    "Montserrat", "Helvetica Neue", sans-serif;
   --t-font-script:  "Pinyon Script", cursive;
 }
 
 @variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-primary-50:  #fdf8f2;
-  --color-primary-100: #f8edd8;
-  --color-primary-200: #f0d9ad;
-  --color-primary-300: #e5be7a;
-  --color-primary-400: #CD9B77;
-  --color-primary-500: #b8803a;
-  --color-primary-600: #9a6520;
-  --color-primary-700: #7a4f18;
-  --color-primary-800: #5c3c14;
-  --color-primary-900: #3d280d;
-  --color-primary-950: #1e1408;
+  --color-primary-50:  #F5F2EC;
+  --color-primary-100: #EFEBE2;
+  --color-primary-200: #EFE4D7;
+  --color-primary-300: #D8C9BA;
+  --color-primary-400: #C9B5A4;
+  --color-primary-500: #B9A594;
+  --color-primary-600: #8F7B6C;
+  --color-primary-700: #6B5A4E;
+  --color-primary-800: #4A3630;
+  --color-primary-900: #302621;
+  --color-primary-950: #1E1813;
 
   --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-sans:    "Jost", "Helvetica Neue", sans-serif;
+  --font-sans:    "Montserrat", "Helvetica Neue", sans-serif;
 }
 
 /* ============================================================
@@ -64,11 +64,11 @@ video::-webkit-media-controls-play-button {
 }
 
 body {
-  background-color: var(--t-bg, #fffefc);
-  color: var(--t-text, #111111);
+  background-color: var(--t-bg, #EFEBE2);
+  color: var(--t-text, #302621);
   /* Override font vars now that Next.js font CSS vars are available on body */
   --t-font-display: var(--font-display), "Cormorant Garamond", Georgia, serif;
-  --t-font-body:    var(--font-body), "Jost", "Helvetica Neue", sans-serif;
+  --t-font-body:    var(--font-body), "Montserrat", "Helvetica Neue", sans-serif;
   --t-font-script:  var(--font-script), "Pinyon Script", cursive;
   font-family: var(--t-font-body);
 }
@@ -139,16 +139,16 @@ body {
   text-decoration: none;
 }
 
-/* Gold filled — primary CTA */
+/* Warm taupe filled — primary CTA */
 .t-btn-accent {
-  background-color: #C09F4F;
+  background-color: #B9A594;
   color: #ffffff;
-  border-color: #C09F4F;
+  border-color: #B9A594;
 }
 .t-btn-accent:hover {
-  background-color: #a8883a;
+  background-color: #8F7B6C;
   color: #ffffff;
-  border-color: #a8883a;
+  border-color: #8F7B6C;
 }
 
 /* Dark filled — on light backgrounds */
@@ -181,7 +181,7 @@ body {
 }
 .t-btn-outline-white:hover {
   background-color: #ffffff;
-  color: #111111;
+  color: #302621;
 }
 
 /* ============================================================
@@ -266,24 +266,24 @@ body {
    GLASS — kept for booking wizard (AppointmentSection)
    ============================================================ */
 .glass-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(239, 235, 226, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(205, 155, 119, 0.4);
+  background: rgba(239, 235, 226, 0.95);
+  border-color: rgba(185, 165, 148, 0.4);
 }
 .glass-nav {
-  background: rgba(255, 254, 252, 0.92);
+  background: rgba(239, 235, 226, 0.92);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 .glass {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(239, 235, 226, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -293,8 +293,8 @@ body {
    LEGACY BUTTONS — kept for booking page / AppointmentSection
    ============================================================ */
 .btn-primary {
-  background-color: var(--t-accent, #fffb00);
-  color: #111111;
+  background-color: var(--t-accent, #B9A594);
+  color: #ffffff;
   padding: 0.75rem 2rem;
   border-radius: var(--t-radius, 0px);
   font-size: 0.65rem;
@@ -308,12 +308,12 @@ body {
 }
 .btn-primary:hover {
   background-color: transparent;
-  color: var(--t-text, #111111);
-  border-color: var(--t-text, #111111);
+  color: var(--t-text, #302621);
+  border-color: var(--t-text, #302621);
 }
 .btn-secondary {
   background-color: transparent;
-  color: var(--t-text, #111111);
+  color: var(--t-text, #302621);
   padding: 0.75rem 2rem;
   border-radius: var(--t-radius, 0px);
   font-size: 0.65rem;
@@ -321,20 +321,20 @@ body {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   transition: all 0.2s ease;
-  border: 1px solid var(--t-border-2, rgba(0,0,0,0.2));
+  border: 1px solid var(--t-border-2, rgba(48,38,33,0.25));
   cursor: pointer;
   font-family: var(--t-font-body);
 }
 .btn-secondary:hover {
-  background-color: var(--t-text, #111111);
-  color: var(--t-bg, #fffefc);
+  background-color: var(--t-text, #302621);
+  color: var(--t-bg, #EFEBE2);
 }
 
 /* ============================================================
    GRADIENT TEXT (legacy compat)
    ============================================================ */
 .gradient-text {
-  background: linear-gradient(135deg, #CD9B77, #b8803a);
+  background: linear-gradient(135deg, #B9A594, #302621);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -345,17 +345,17 @@ body {
    ============================================================ */
 .custom-scrollbar::-webkit-scrollbar        { width: 4px; }
 .custom-scrollbar::-webkit-scrollbar-track  { background: rgba(0,0,0,0.04); }
-.custom-scrollbar::-webkit-scrollbar-thumb  { background: rgba(205,155,119,0.4); border-radius: 0; }
-.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(205,155,119,0.7); }
+.custom-scrollbar::-webkit-scrollbar-thumb  { background: rgba(185,165,148,0.4); border-radius: 0; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(185,165,148,0.7); }
 
 .themed-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: rgba(205,155,119,0.4) rgba(0,0,0,0.04);
+  scrollbar-color: rgba(185,165,148,0.4) rgba(0,0,0,0.04);
 }
 .themed-scrollbar::-webkit-scrollbar        { width: 4px; height: 4px; }
 .themed-scrollbar::-webkit-scrollbar-track  { background: rgba(0,0,0,0.04); }
-.themed-scrollbar::-webkit-scrollbar-thumb  { background: rgba(205,155,119,0.4); border-radius: 0; }
-.themed-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(205,155,119,0.7); }
+.themed-scrollbar::-webkit-scrollbar-thumb  { background: rgba(185,165,148,0.4); border-radius: 0; }
+.themed-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(185,165,148,0.7); }
 
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }

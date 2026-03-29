@@ -62,7 +62,7 @@ export const content = {
   },
 
   contact: {
-    label:   'Location',
+    label:   'Contact Us',
     heading: 'Find Us',
     subtext: 'Visit our salon or get in touch',
     address: ['No. 123, Galle Road,', 'Colombo 03,', 'Sri Lanka'],
